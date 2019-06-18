@@ -1,0 +1,69 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "grc app configuration",
+	"patterns": [
+		{ "include": "#comments" },
+		{ "include": "#properties" },
+		{ "include": "#strings" }
+	],
+	"repository": {
+		"strings": {
+			"name": "string.quoted.double.grc",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.grc",
+					"match": "\\\\."
+				}
+			]
+		},
+		"regexp": {
+			"name": "string.regexp",
+			"match": "(?<=regexp=).*$"
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.number-sign",
+					"match": "#.*$"
+				},
+				{
+					"name": "comment.line.separator",
+					"match": "^[^\\w].*$"
+				}
+			]
+		},
+		"keys": {
+			"name": "entity.name.tag.localname",
+			"match": "^\\w+(?==)"
+		},
+		"operators": {
+			"name": "keyword.operator",
+			"match": "[=,]"
+		},
+		"properties": {
+			"begin": "^(?=\\w)",
+			"end": "$",
+			"patterns": [
+				{ "include": "#keys" },
+				{ "include": "#strings" },
+				{ "include": "#regexp" },
+				{ "include": "#operators" },
+				{
+					"name": "entity.other.attribute-name.count",
+					"match": "\\b(once|more|stop|previous|block|unblock)\\b"
+				},
+				{
+					"name": "entity.other.attribute-name.colour",
+					"match": "\\b(none|default|unchanged|bold|underline|blink|reverse|concealed|(on_)?(bright_)?(black|red|green|yellow|blue|magenta|cyan|white)|beep)\\b"
+				},
+				{
+					"name": "entity.other.attribute-name.skip",
+					"match": "\\b(yes|no)\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.grc.app"
+}

@@ -1,0 +1,44 @@
+{
+    "name": "grc-syntax-highlighting",
+    "displayName": "grc-syntax-highlighting",
+    "description": "Syntax support for the grc Generic Colouriser",
+    "version": "0.0.1",
+    "engines": { "vscode": "^1.35.0" },
+	"activationEvents": [ "*" ],
+    "categories": [ "Programming Languages" ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "grc-app",
+                "aliases": [
+                    "grc app configuration",
+                    "grc"
+                ],
+                "filenamePatterns": [
+                    "conf.*"
+                ],
+                "configuration": "./grc-app.language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "grc-app",
+                "scopeName": "source.grc.app",
+                "path": "./syntaxes/grc-app.tmLanguage.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "@types/node": "^12.0.10",
+        "@types/vscode": "^1.35.0",
+        "tslint": "^5.18.0",
+        "typescript": "^3.5.2"
+    },
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"lint": "tslint -p ./",
+		"watch": "tsc -watch -p ./"
+	},
+    "main": "./out/extension.js"
+}
