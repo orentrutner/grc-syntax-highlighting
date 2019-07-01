@@ -3,7 +3,6 @@
     "displayName": "grc-syntax-highlighting",
     "description": "Syntax support for the grc Generic Colouriser",
     "version": "0.0.1",
-
     "author": {
         "name": "Oren Trutner",
         "url": "https://github.com/orentrutner"
@@ -11,16 +10,21 @@
     "publisher": "oren-trutner",
     "license": "MIT",
     "repository": {
-      "type": "git",
-      "url": "https://github.com/orentrutner/grc-syntax-highlighting"
+        "type": "git",
+        "url": "https://github.com/orentrutner/grc-syntax-highlighting"
     },
     "bugs": {
         "url": "https://github.com/orentrutner/grc-syntax-highlighting/issues"
     },
-
-    "engines": { "vscode": "^1.35.0" },
-	"activationEvents": [ "onLanguage:grc-app" ],
-    "categories": [ "Programming Languages" ],
+    "engines": {
+        "vscode": "^1.35.0"
+    },
+    "activationEvents": [
+        "onLanguage:grc-app"
+    ],
+    "categories": [
+        "Programming Languages"
+    ],
     "contributes": {
         "languages": [
             {
@@ -49,11 +53,11 @@
         "tslint": "^5.18.0",
         "typescript": "^3.5.2"
     },
-	"scripts": {
-		"vscode:prepublish": "yarn run compile",
-		"compile": "tsc -p ./",
-		"lint": "tslint -p ./",
-		"watch": "tsc -watch -p ./"
-	},
+    "scripts": {
+        "vscode:prepublish": "yarn run compile",
+        "compile": "tsc -p ./",
+        "lint": "tslint -p ./",
+        "watch": "tsc -watch -p ./"
+    },
     "main": "./out/extension.js"
 }

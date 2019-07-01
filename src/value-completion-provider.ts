@@ -1,15 +1,6 @@
 import * as vscode from 'vscode';
 import { makeCompletion } from './completion-util';
-
-const simpleColors = ['black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white'];
-const colors = [
-    'none', 'default', 'unchanged', 'beep',
-    'bold', 'underline', 'blink', 'reverse', 'concealed'
-]
-    .concat(simpleColors)
-    .concat(simpleColors.map(color => `bright_${color}`))
-    .concat(simpleColors.map(color => `on_${color}`))
-    .concat(simpleColors.map(color => `on_bright_${color}`));
+import { COLOR_NAMES } from './colors';
 
 export class ValueCompletionProvider implements vscode.CompletionItemProvider {
     public provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
@@ -21,7 +12,7 @@ export class ValueCompletionProvider implements vscode.CompletionItemProvider {
         const key = operatorIndex >= 0 ? line.substring(0, operatorIndex).trim(): null;
         switch (key) {
             case 'colours':
-                return colors.map(color => makeCompletion(color, { kind: vscode.CompletionItemKind.Color }));
+                return COLOR_NAMES.map(color => makeCompletion(color, { kind: vscode.CompletionItemKind.Color }));
 
             case 'count':
                 return [
