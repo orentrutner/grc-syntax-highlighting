@@ -3,8 +3,22 @@
     "displayName": "grc-syntax-highlighting",
     "description": "Syntax support for the grc Generic Colouriser",
     "version": "0.0.1",
+
+    "author": {
+        "name": "Oren Trutner",
+        "url": "https://github.com/orentrutner"
+    },
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/orentrutner/grc-syntax-highlighting"
+    },
+    "bugs": {
+        "url": "https://github.com/orentrutner/grc-syntax-highlighting/issues"
+    },
+
     "engines": { "vscode": "^1.35.0" },
-	"activationEvents": [ "*" ],
+	"activationEvents": [ "onLanguage:grc-app" ],
     "categories": [ "Programming Languages" ],
     "contributes": {
         "languages": [
