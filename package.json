@@ -2,7 +2,7 @@
     "name": "grc-syntax-highlighting",
     "displayName": "grc-syntax-highlighting",
     "description": "Syntax support for the grc Generic Colouriser",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": {
         "name": "Oren Trutner",
         "url": "https://github.com/orentrutner"

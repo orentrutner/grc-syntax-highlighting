@@ -15,6 +15,10 @@ Use this extension to edit grc configuration files.
 
 ## Release Notes
 
+### 0.0.2
+
+Added color preview.
+
 ### 0.0.1
 
 This is the initial release.  It colors keys, values, operators, seprators and
